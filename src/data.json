@@ -1,0 +1,192 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Nithya",
+        "password": "abcd1123",
+        "email": "Nithya@email.com"
+      },
+      {
+        "id": 2,
+        "name": "Arun",
+        "password": "abcd23",
+        "email": "Arun@email.com"
+      },
+          {
+        "id": 3,
+        "name": "Latha",
+        "password": "cd23",
+        "email": "Latha@email.com"
+      }
+    ],
+    "children": [
+      {
+        "id": 1,
+        "name": "Inara",
+        "age": "12",
+        "parentId": 1,
+        "photo": "https://ik.imagekit.io/zhpwq1uen/jeremy-mcknight-11GZVrMzfUU-unsplash.jpg?updatedAt=1686826085269"
+      },
+      {
+        "id": 2,
+        "name": "Idhant",
+        "age": "9",
+        "parentId": 1,
+        "photo": "https://ik.imagekit.io/zhpwq1uen/ben-white-qDY9ahp0Mto-unsplash.jpg?updatedAt=1686826083080"
+      },
+       {
+        "id": 3,
+        "name": "Inu",
+        "age": "11",
+        "parentId": 2,
+        "photo": "https://ik.imagekit.io/zhpwq1uen/senjuti-kundu-JfolIjRnveY-unsplash.jpg?updatedAt=1686826084045"
+      },
+         {
+        "id": 4,
+        "name": "Idhu",
+        "age": "9",
+        "parentId": 2,
+        "photo": "https://ik.imagekit.io/zhpwq1uen/daiga-ellaby-JZ51o_-UOY8-unsplash.jpg?updatedAt=1686826072823"
+      },
+          {
+        "id": 5,
+        "name": "Andril",
+        "age": "7",
+        "parentId": 3,
+        "photo": "https://ik.imagekit.io/zhpwq1uen/vika-strawberrika-tO_4xkzT3vA-unsplash.jpg?updatedAt=1686826058479"
+      }
+    ],
+    "Calendar": [
+      {
+        "id": 1,
+        "name": "Doctor",
+        "start":"new Date(2021,6,0)",
+        "date": "13",
+        "month": "6",
+        "year": "2023",
+        "description": "I want to take her to EyeDoctor",
+        "childId": 1
+      },  {
+        "id": 2,
+        "name": "Sport",
+        "date": "13",
+        "month": "3",
+        "year": "2023",
+        "description": "Chess Class",
+        "childId": 2
+      },
+         {
+        "id": 3,
+        "name": "PTM",
+        "date": "03",
+        "month": "6",
+        "year": "2023",
+        "description": "PTM meeting @ WSG",
+        "childId": 3
+      },
+      {
+        "id": 4,
+        "name": "Holiday",
+        "date": "05",
+        "month": "8",
+        "year": "2023",
+        "description": "School Holiday",
+        "childId": 4
+      },    
+      {
+        "id": 5,
+        "name": "Sport",
+        "date": "05",
+        "month": "8",
+        "year": "2023",
+        "description": "Swimming",
+        "childId": 5
+      },    
+      {
+        "id": 6,
+        "name": "Asdf",
+        "date": "05",
+        "month": "8",
+        "year": "2023",
+        "description": "Swimming",
+        "childId": 5
+      }
+    ],
+  
+    "gallery": [
+      {
+        "id": 1,
+        "childId": 1,
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/jeremy-mcknight-11GZVrMzfUU-unsplash.jpg?updatedAt=1686826085269"]
+      }, {
+        "id": 2,
+        "childId": 2,
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/ben-white-qDY9ahp0Mto-unsplash.jpg?updatedAt=1686826083080"]
+      },
+       {
+        "id": 3,
+        "childId": 3,
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/senjuti-kundu-JfolIjRnveY-unsplash.jpg?updatedAt=1686826084045"]
+      },
+        {
+        "id": 4,
+        "childId": 4,
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/daiga-ellaby-JZ51o_-UOY8-unsplash.jpg?updatedAt=1686826072823"]
+      },
+        {
+        "id": 5,
+        "childId": 5,
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/vika-strawberrika-tO_4xkzT3vA-unsplash.jpg?updatedAt=1686826058479"]
+      }
+    ],
+    "scoreCard": [
+      {
+        "id": 1,
+        "subject": [
+        { "id": 1, "name": "English", "value": "94", "month": "3" },
+        { "id": 2, "name": "German", "value": "54", "month": "3" },
+        { "id": 3, "name": "History", "value": "84", "month": "3" },
+       { "id": 4, "name": "Chemistry", "value": "94", "month": "3" },
+       { "id": 5, "name": "Biology", "value": "84", "month": "3" }],
+        "childId": 1
+      },
+         {
+        "id": 2,
+        "subject": [
+        { "id": 1, "name": "English", "value": "94", "month": "4" },
+        { "id": 2, "name": "German", "value": "54", "month": "4" },
+           { "id": 3, "name": "History", "value": "84", "month": "4" },
+       { "id": 4, "name": "Chemistry", "value": "94", "month": "4" },
+       { "id": 5, "name": "Biology", "value": "84", "month": "4" }],
+        "childId": 2
+      }, {
+        "id": 3,
+        "subject": [
+        { "id": 1, "name": "English", "value": "33", "month": "2" },
+        { "id": 2, "name": "German", "value": "55", "month": "2" },
+           { "id": 3, "name": "History", "value": "66", "month": "2" },
+       { "id": 4, "name": "Chemistry", "value": "67", "month": "2" },
+       { "id": 5, "name": "Biology", "value": "38", "month": "2" }],
+        "childId": 3
+      }, {
+        "id": 4,
+        "subject": [
+        { "id": 1, "name": "English", "value": "94", "month": "8" },
+        { "id": 2, "name": "German", "value": "54", "month": "8" },
+           { "id": 3, "name": "History", "value": "84", "month": "8" },
+       { "id": 4, "name": "Chemistry", "value": "94", "month": "8" },
+       { "id": 5, "name": "Biology", "value": "84", "month": "8" }],
+        "childId": 4
+      },
+            {
+        "id": 5,
+        "subject": [
+        { "id": 1, "name": "English", "value": "88", "month": "7" },
+        { "id": 2, "name": "German", "value": "99", "month": "7" },
+        { "id": 3, "name": "History", "value": "66", "month": "7" },
+       { "id": 4, "name": "Chemistry", "value": "74", "month": "7" },
+       { "id": 5, "name": "Biology", "value": "94", "month": "7" }],
+        "childId": 5
+      }
+    ]
+  }
