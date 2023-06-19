@@ -1,35 +1,33 @@
 import React from "react";
-import {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
-import data from '../data.json'
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import data from "../data.json";
 
 function Home() {
-    const [user, setUser] = useState(data.users)
-    const navigate = useNavigate()
-  
-    const submitHandler =(e)=>{
-      e.preventDefault()
-      const email = e.target.email.value
-      const password = e.target.password.value
-      const person = data.users.find((i=>i.email==email))
-      console.log(person)
-    
-      
-      if(person){
-        console.log(person)
-        if(person.password==password){
-          console.log('you can login')
-          setUser(person)
-          navigate('/profile')
-        } else{
-          console.log('password is wrong')
-        }
+  const [user, setUser] = useState(data.users);
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const person = data.users.find((i) => i.email == email);
+    console.log(person);
+
+    if (person) {
+      console.log(person);
+      if (person.password == password) {
+        console.log("you can login");
+        setUser(person);
+        navigate("/profile");
+      } else {
+        console.log("password is wrong");
       }
-      else{
-        console.log('person not found')
-      }
+    } else {
+      console.log("person not found");
     }
-  
+  };
+
   return (
     <>
       <div className="hero min-h-screen bg-info">
@@ -49,7 +47,11 @@ function Home() {
               Get Started
             </button>
             <dialog id="my_modal_2" className="modal">
-              <form onSubmit={submitHandler} method="dialog" className="modal-box">
+              <form
+                onSubmit={submitHandler}
+                method="dialog"
+                className="modal-box"
+              >
                 <h3 className="font-bold text-lg">Login</h3>
                 <input
                   className="input input-bordered w-full max-w-xs"
@@ -68,10 +70,13 @@ function Home() {
                 <button className="btn btn-primary" type="submit">
                   Login
                 </button>
-                <button className="btn btn-primary" type="submit">
-                  Register
-                </button>
+                <Link to="/register">
+                  <button className="btn btn-primary" type="submit">
+                    Register
+                  </button>{" "}
+                </Link>
               </form>
+
               <form method="dialog" className="modal-backdrop">
                 <button>close</button>
               </form>

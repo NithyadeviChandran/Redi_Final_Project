@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
+import Register from "./components/Register";
 import data from './data.json'
 
 import {useState} from 'react'
@@ -15,9 +16,11 @@ function App() {
   return (
     <div className="App min-h-screen">
       <Nav />
+    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path ='/profile' element={<Profile user={user}/>} />
+        <Route path='/register' element={<Register/> }/>
         <Route path="calendar" element={<Main />} />
       </Routes>
       <Footer />
