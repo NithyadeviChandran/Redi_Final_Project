@@ -3,19 +3,19 @@
       {
         "id": 1,
         "name": "Nithya",
-        "password": "abcd1123",
+        "password": "abc",
         "email": "Nithya@email.com"
       },
       {
         "id": 2,
         "name": "Arun",
-        "password": "abcd23",
+        "password": "ab",
         "email": "Arun@email.com"
       },
-          {
+      {
         "id": 3,
         "name": "Latha",
-        "password": "cd23",
+        "password": "cd",
         "email": "Latha@email.com"
       }
     ],

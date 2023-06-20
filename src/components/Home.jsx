@@ -1,33 +1,31 @@
 import React from "react";
-import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import data from "../data.json";
+import Profile from "./Profile";
 
-function Home() {
-  const [user, setUser] = useState(data.users);
-  const navigate = useNavigate();
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const person = data.users.find((i) => i.email == email);
-    console.log(person);
+function Home({user, setUser}) {
+  const navigate = useNavigate()
 
-    if (person) {
-      console.log(person);
-      if (person.password == password) {
-        console.log("you can login");
-        setUser(person);
-        navigate("/profile");
-      } else {
-        console.log("password is wrong");
+  const submitHandler =(e)=>{
+    e.preventDefault()
+    const email = e.target.email.value
+    const password = e.target.password.value
+    const person = data.users.find(i=>i.email===email)
+    // console.log(person.name)  
+    if(person){
+      if(person.password==password){
+        console.log('you can login')
+        setUser(person)
+        navigate('/profile')
+      } else{
+        console.log('password is wrong')
       }
-    } else {
-      console.log("person not found");
     }
-  };
-
+    else{
+      console.log('person not found')
+    }
+  }
   return (
     <>
       <div className="hero min-h-screen bg-info">
@@ -38,8 +36,6 @@ function Home() {
               Beautiful Memories are like Old friends. They may not always be on
               your mind, but they are forever in your local storage!
             </p>
-            {/* Open the modal using ID.showModal() method */}
-            {/* Open the modal using ID.showModal() method */}
             <button
               className="btn btn-primary"
               onClick={() => window.my_modal_2.showModal()}
@@ -73,7 +69,7 @@ function Home() {
                 <Link to="/register">
                   <button className="btn btn-primary" type="submit">
                     Register
-                  </button>{" "}
+                  </button>
                 </Link>
               </form>
 
