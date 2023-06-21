@@ -3,29 +3,27 @@ import { useNavigate, Link } from "react-router-dom";
 import data from "../data.json";
 import Profile from "./Profile";
 
+function Home({ user, setUser }) {
+  const navigate = useNavigate();
 
-function Home({user, setUser}) {
-  const navigate = useNavigate()
-
-  const submitHandler =(e)=>{
-    e.preventDefault()
-    const email = e.target.email.value
-    const password = e.target.password.value
-    const person = data.users.find(i=>i.email===email)
-    // console.log(person.name)  
-    if(person){
-      if(person.password==password){
-        console.log('you can login')
-        setUser(person)
-        navigate('/profile')
-      } else{
-        console.log('password is wrong')
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const person = data.users.find((i) => i.email === email);
+    // console.log(person.name)
+    if (person) {
+      if (person.password == password) {
+        console.log("you can login");
+        setUser(person);
+        navigate("/profile");
+      } else {
+        console.log("password is wrong");
       }
+    } else {
+      console.log("person not found");
     }
-    else{
-      console.log('person not found')
-    }
-  }
+  };
   return (
     <>
       <div className="hero min-h-screen bg-info">
