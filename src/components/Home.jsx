@@ -1,21 +1,20 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import data from "../data.json";
-import Profile from "./Profile";
 
-function Home({ user, setUser }) {
+
+function Home({ users, setUsers }) {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const person = data.users.find((i) => i.email === email);
-    // console.log(person.name)
+    const person = users && users.find((i) => i.email === email);
+    console.log(person.name)
     if (person) {
       if (person.password == password) {
         console.log("you can login");
-        setUser(person);
+        setUsers(person);
         navigate("/profile");
       } else {
         console.log("password is wrong");

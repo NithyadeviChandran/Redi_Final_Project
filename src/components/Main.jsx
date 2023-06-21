@@ -2,11 +2,17 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Main({ user, setUser }) {
+function Main({ children, setChildren, Calendar ,setCalendar}) {
   const [date, setDate] = useState([]);
   const [name, setName] = useState([]);
   const [desc, setDesc] = useState([]);
   const [data, setData] = useState([]);
+  
+  if (children) {   
+    console.log(children)
+    const result = Calendar && Calendar.filter((i) => i.childId == children.id);
+    console.log(result)
+  }
 
   function changeHandler(e) {
     e.preventDefault();
@@ -27,6 +33,7 @@ function Main({ user, setUser }) {
   }
   return (
     <>
+      <p>{`Welcome ${Calendar && Calendar.childId}`}</p>
       <div className="min-h-screen">
         <h4>Calendar</h4>
         <div className="calendar min-h-fit">

@@ -1,36 +1,38 @@
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import data from "../data.json";
+// import data from "../data.json";
 
-function Profile({ user, setUser, kids, setKids }) {
+function Profile({ users,setUsers, children, setChildren}) {
   const navigate = useNavigate();
-  if (user) {
-    const children = data.children.filter((i) => i.parentId == user.id);
-    if (children) {
-      console.log(children);
-      kids = children;
-      navigate("/calendar");
+  if (users) {
+    const kids = children && children.filter((i) => i.parentId == users.id);
+    console.log(kids)
+
+    if (kids) {
+      children=kids
+      // setChildren(kids);
+      // navigate("/calendar");
     }
   }
   useEffect(() => {
-    if (!user) {
+    if (!users) {
       navigate("/");
     }
   }, []);
   useEffect(() => {
-    if (!kids) {
-      navigate("/");
+    if (!children) {
+      // navigate("/");
     }
   }, []);
   return (
     <div>
       <h1>
-        <p>{`Welcome ${user && user.name}`}</p>
+        <p>{`Welcome ${users && users.name}`}</p>
       </h1>
       {/* {data.users.map((i=> <p>{i.name}</p>))} */}
       <div>
-        {kids &&
-          kids.map((i) => (
+        {children &&
+          children.map((i) => (
             <div className="w-24 rounded">
               <Link to="/calendar">
                 <img src={i.photo} alt="" />
