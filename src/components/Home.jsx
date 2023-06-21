@@ -10,7 +10,7 @@ function Home({ users, setUsers }) {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const person = users && users.find((i) => i.email === email);
-    console.log(person.name)
+    // console.log(person.name)
     if (person) {
       if (person.password == password) {
         console.log("you can login");

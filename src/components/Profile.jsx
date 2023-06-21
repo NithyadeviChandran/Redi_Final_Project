@@ -42,9 +42,11 @@ function Profile({ users,setUsers, children, setChildren}) {
             </div>
           ))}
       </div>
+   
       <button className="btn btn-primary" type="submit">
-        + Add Profile{" "}
+        + Add Profile
       </button>
+ 
     </div>
   );
 }

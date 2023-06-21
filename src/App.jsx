@@ -15,6 +15,7 @@ function App() {
   const [children, setChildren] = useState()
   const [users, setUsers] = useState();
   const [Calendar, setCalendar] = useState()
+  const [newuser, setNewUser] = useState()
   
   useEffect(()=>{
       // api calls goes here
