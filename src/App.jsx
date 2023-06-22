@@ -21,6 +21,8 @@ function App() {
   const [user, setUser] = useState()
   const [child, setChild] = useState()
   const [child1, setChild1] = useState()
+  const [gallery, setGallery] = useState()
+  const [photos, setPhotos] = useState()
  
  
   
@@ -35,6 +37,9 @@ function App() {
     axios("https://nithya-render.onrender.com/Calendar")
     .then(i=>setCalendar(i.data))
     .catch(i=> console.log(i))
+    axios("https://nithya-render.onrender.com/gallery")
+    .then(i=>setGallery(i.data))
+    .catch(i=> console.log(i))
   },[])
 
 
@@ -48,7 +53,7 @@ function App() {
         <Route path="/childpage" element={<Childpage child={child} child1={child1} setChild1={setChild1}/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/calendar" element={<Main Calendar={Calendar} event={event} setEvent={setEvent}child1={child1} setChild1={setChild1} />} />
-        <Route path="gallery" element={<Gallery />} />
+        <Route path="gallery" element={<Gallery photos={photos} setPhotos={setPhotos} gallery={gallery} child1={child1} setChild1={setChild1} />} />
       </Routes>
       <Footer />
     </div>

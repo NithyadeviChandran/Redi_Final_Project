@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-function Gallery() {
+function Gallery({child1,gallery,photos,setPhotos}) {
   const [image, setImage] = useState([])
+  let result=''
+  if (child1) {   
+    console.log(child1)
+    result = gallery && gallery.filter((i) => i.childId == child1.id);
+    console.log(result)
+  }
+
+  useEffect(()=>{
+    if(result){
+      setPhotos(result)
+    }
+  },[])
 
   const changeHandler=(e) =>{
     e.preventDefault()
@@ -18,6 +31,8 @@ function Gallery() {
   
   return (
     <>
+    {photos&&photos.map((i)=><div><img src={i.photos} alt="" /></div> )}
+
      <div><img src={image} alt="" /></div>
     <div className="min-h-screen" >
         
@@ -26,6 +41,9 @@ function Gallery() {
         <button className='btn btn-primary' onClick={clickHandler}>Upload Photos</button>
       </div>
     </div>
+    <Link to ={"/childpage"}> 
+                  <button className="btn btn-primary">Go to Profile</button>
+    </Link>
     </>
   )
 }

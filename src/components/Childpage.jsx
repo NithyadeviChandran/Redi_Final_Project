@@ -28,6 +28,9 @@ function Childpage({child,child1}) {
                   <Link to ={"/calendar"}> 
                   <button className="btn btn-primary">Calendar</button>
                   </Link>
+                  <Link to ={"/gallery"}> 
+                  <button className="btn btn-primary">Gallery</button>
+                  </Link>
                 </div>
               </div>
             </div>

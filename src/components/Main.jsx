@@ -100,6 +100,12 @@ function Main({ Calendar, child1, event, setEvent}) {
           </ul>
         </div>
       </div>
+      <Link to ={"/childpage"}> 
+                  <button className="btn btn-primary">Go to Profile</button>
+    </Link>
+    <Link to ={"/gallery"}> 
+                  <button className="btn btn-primary">Go to Gallery</button>
+    </Link>
     </>
   );
 }
