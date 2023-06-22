@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 function Gallery() {
-  const [image, setImage] = useState()
+  const [image, setImage] = useState([])
 
   const changeHandler=(e) =>{
-    console.log(e.target.files)
+    e.preventDefault()
+    console.log(e.target.files[0])
     setImage(e.target.files[0])
   }
 
@@ -16,6 +17,8 @@ function Gallery() {
   }
   
   return (
+    <>
+     <div><img src={image} alt="" /></div>
     <div className="min-h-screen" >
         
         <input type="file" className="file-input file-input-bordered file-input-primary w-full max-w-xs" onChange={changeHandler}/>
@@ -23,6 +26,7 @@ function Gallery() {
         <button className='btn btn-primary' onClick={clickHandler}>Upload Photos</button>
       </div>
     </div>
+    </>
   )
 }
 

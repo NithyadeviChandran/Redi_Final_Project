@@ -1,52 +1,59 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import data from "../data.json";
 
-function Profile({ users,setUsers, children, setChildren}) {
+function Profile({ children, user, child, setChild, setChild1 }) {
   const navigate = useNavigate();
-  if (users) {
-    const kids = children && children.filter((i) => i.parentId == users.id);
-    console.log(kids)
-
-    if (kids) {
-      children=kids
-      // setChildren(kids);
-      // navigate("/calendar");
-    }
+  let kidslist = "";
+  if (user) {
+    kidslist = children && children.filter((i) => i.parentId == user.id);
+    console.log(kidslist);
   }
   useEffect(() => {
-    if (!users) {
+    if (kidslist) {
+      setChild(kidslist);
+    }
+    if (child) {
+      navigate("/childpage");
+    }
+  }, []);
+  useEffect(() => {
+    if (!user) {
       navigate("/");
     }
   }, []);
-  useEffect(() => {
-    if (!children) {
-      // navigate("/");
-    }
-  }, []);
+
+  function childSelect (e) {
+    alert(e.name)
+    setChild1(e)
+    navigate("/childpage")
+
+  }
   return (
     <div>
       <h1>
-        <p>{`Welcome ${users && users.name}`}</p>
+        <p>{`Welcome ${user && user.name}`}</p>
       </h1>
-      {/* {data.users.map((i=> <p>{i.name}</p>))} */}
       <div>
-        {children &&
-          children.map((i) => (
-            <div className="w-24 rounded">
-              <Link to="/calendar">
-                <img src={i.photo} alt="" />
-              </Link>
-              <p className="italic">{`Name:${i.name}`}</p>
-              <p className="italic">{`Age:${i.age}`}</p>
+        {child &&
+          child.map((i) => (
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <figure className="px-10 pt-10">
+                <img src={i.photo} alt="Shoes" className="rounded-xl" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">{i.name}</h2>
+                <p>{i.age}</p>
+                <div className="card-actions">
+                  <button onClick={() => childSelect(i)} className="btn btn-primary">Check</button>
+                </div>
+              </div>
             </div>
           ))}
       </div>
-   
+
       <button className="btn btn-primary" type="submit">
         + Add Profile
       </button>
- 
     </div>
   );
 }

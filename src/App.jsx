@@ -7,15 +7,21 @@ import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import Register from "./components/Register";
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
+import Childpage from "./components/Childpage";
 
 
 function App() {
   const [children, setChildren] = useState()
   const [users, setUsers] = useState();
   const [Calendar, setCalendar] = useState()
+  const [event, setEvent] = useState()
   const [newuser, setNewUser] = useState()
+  const [user, setUser] = useState()
+  const [child, setChild] = useState()
+  const [child1, setChild1] = useState()
+ 
   
   useEffect(()=>{
       // api calls goes here
@@ -35,17 +41,12 @@ function App() {
     <>
     <div className="App min-h-screen">
       <Nav /> 
-      {/* {users && users.map(i=> <p>{i.name}</p>)} */}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home users={users} setUsers={setUsers} />
-          }
-        />
-        <Route path="/profile" element={<Profile users={users}  children={children} setChildren={setChildren} />} />
+        <Route path="/" element={<Home users={users} setUsers={setUsers} setUser={setUser} /> } />
+        <Route path="/profile" element={<Profile user={user} children={children} child={child} setChild={setChild} setChild1={setChild1}/>} />
+        <Route path="/childpage" element={<Childpage child={child} child1={child1} setChild1={setChild1}/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/calendar" element={<Main users={users} children={children} setChildren={setChildren} Calendar={Calendar} setCalendar={setCalendar}/>} />
+        <Route path="/calendar" element={<Main Calendar={Calendar} event={event} setEvent={setEvent} child={child} />} />
         <Route path="gallery" element={<Gallery />} />
       </Routes>
       <Footer />

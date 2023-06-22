@@ -1,18 +1,25 @@
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { Link } from "react-router-dom";
 
-function Main({ children, setChildren, Calendar ,setCalendar}) {
+function Main({ Calendar, child, event, setEvent}) {
   const [date, setDate] = useState([]);
   const [name, setName] = useState([]);
   const [desc, setDesc] = useState([]);
   const [data, setData] = useState([]);
   
-  if (children) {   
-    console.log(children)
-    const result = Calendar && Calendar.filter((i) => i.childId == children.id);
+  let result=''
+  if (child) {   
+    console.log(child)
+    result = Calendar && Calendar.filter((i) => i.childId == child.id);
     console.log(result)
   }
+
+  useEffect(()=>{
+    if(result){
+      setEvent(result)
+    }
+  },[])
 
   function changeHandler(e) {
     e.preventDefault();
@@ -33,7 +40,9 @@ function Main({ children, setChildren, Calendar ,setCalendar}) {
   }
   return (
     <>
-      <p>{`Welcome ${Calendar && Calendar.childId}`}</p>
+      <h1>
+        <p>{`Welcome ${child && child.name}`}</p>
+      </h1>
       <div className="min-h-screen">
         <h4>Calendar</h4>
         <div className="calendar min-h-fit">
@@ -72,9 +81,6 @@ function Main({ children, setChildren, Calendar ,setCalendar}) {
         <div className="calendar min-h-fit">
           <ul className="menu bg-base-200 w-56 rounded-box w-80">
             <li className="menu-title">Appointments</li>
-            {/* {date.map((date,index)=> <li key={index}>Date:{date}</li>)}
-        {name.map((name,index)=> <li key={index}>Title:{name}</li>)}
-        {desc.map((desc,index)=> <li key={index}>Description:{desc}</li>)} */}
             {data.map((data, index) => (
               <li key={index}>{data}</li>
             ))}

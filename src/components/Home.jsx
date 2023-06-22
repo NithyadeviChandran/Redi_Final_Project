@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 
-function Home({ users, setUsers }) {
+function Home({ users, setUser }) {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
@@ -14,7 +14,7 @@ function Home({ users, setUsers }) {
     if (person) {
       if (person.password == password) {
         console.log("you can login");
-        setUsers(person);
+        setUser(person);
         navigate("/profile");
       } else {
         console.log("password is wrong");
