@@ -22,6 +22,7 @@ function App() {
   const [child, setChild] = useState()
   const [child1, setChild1] = useState()
  
+ 
   
   useEffect(()=>{
       // api calls goes here
@@ -46,7 +47,7 @@ function App() {
         <Route path="/profile" element={<Profile user={user} children={children} child={child} setChild={setChild} setChild1={setChild1}/>} />
         <Route path="/childpage" element={<Childpage child={child} child1={child1} setChild1={setChild1}/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/calendar" element={<Main Calendar={Calendar} event={event} setEvent={setEvent} child={child} />} />
+        <Route path="/calendar" element={<Main Calendar={Calendar} event={event} setEvent={setEvent}child1={child1} setChild1={setChild1} />} />
         <Route path="gallery" element={<Gallery />} />
       </Routes>
       <Footer />

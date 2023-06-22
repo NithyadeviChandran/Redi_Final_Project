@@ -23,7 +23,6 @@ function Profile({ children, user, child, setChild, setChild1 }) {
   }, []);
 
   function childSelect (e) {
-    alert(e.name)
     setChild1(e)
     navigate("/childpage")
 
@@ -38,13 +37,13 @@ function Profile({ children, user, child, setChild, setChild1 }) {
           child.map((i) => (
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
-                <img src={i.photo} alt="Shoes" className="rounded-xl" />
+                <img src={i.photo} alt="photo" className="rounded-xl" />
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{i.name}</h2>
                 <p>{i.age}</p>
                 <div className="card-actions">
-                  <button onClick={() => childSelect(i)} className="btn btn-primary">Check</button>
+                  <button onClick={() => childSelect(i)} className="btn btn-primary">Go to page</button>
                 </div>
               </div>
             </div>
