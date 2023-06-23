@@ -23,7 +23,6 @@ function Childpage({ child, child1 }) {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{child1.name}</h2>
-          <p>{child1.age}</p>
           <div className="card-actions">
             <Link to={"/calendar"}>
               <button className="btn btn-primary">Calendar</button>

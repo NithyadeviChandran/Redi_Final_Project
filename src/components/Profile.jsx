@@ -35,18 +35,12 @@ function Profile({ children, user, child, setChild, setChild1 }) {
         {child &&
           child.map((i) => (
             <div className="card h-72 w-96 bg-base-100 shadow-xl">
-              <figure className="px-10 pt-10">
+              <figure className="px-10 pt-10"   onClick={() => childSelect(i)}>
                 <img src={i.photo} alt="photo" className="rounded-xl" />
               </figure>
               <div className="card-body items-center text-center">
                 <h2 className="card-title">{i.name}</h2>
                 <div className="card-actions">
-                  <button
-                    onClick={() => childSelect(i)}
-                    className="btn btn-primary py-2 px-4"
-                  >
-                    Go to page
-                  </button>
                 </div>
               </div>
             </div>

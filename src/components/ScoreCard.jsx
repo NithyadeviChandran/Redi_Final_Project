@@ -28,9 +28,7 @@ function ScoreCard({scoreCard,child1,score,setScore}) {
             <div>
             <p>{`subject: ${i.name}`}</p>
             <p>{`marks: ${i.value}`}</p>
-            </div>)}
-
-            
+            </div>)}   
       <BarChart width={350} height={300} data={score}>
             <Bar dataKey="" fill="green" />
             <XAxis dataKey="" />

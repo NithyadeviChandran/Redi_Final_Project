@@ -11,6 +11,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Childpage from "./components/Childpage";
 import ScoreCard from "./components/ScoreCard";
+import image from './assets/CoverPhoto.jpeg'
 
 
 function App() {
