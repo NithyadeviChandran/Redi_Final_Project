@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-
 function Home({ users, setUser }) {
   const navigate = useNavigate();
 
@@ -30,7 +29,7 @@ function Home({ users, setUser }) {
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Hello there</h1>
             <p className="font-sans py-6">
-              Beautiful Memories are like Old friends. They may not always be on
+              Beautiful Memories are like Old friends. Create one for your Child!They may not always be on
               your mind, but they are forever in your local storage!
             </p>
             <button
