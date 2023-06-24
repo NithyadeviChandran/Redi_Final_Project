@@ -28,7 +28,7 @@ function Home({ users, setUser }) {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Hello there</h1>
-            <p className="font-sans py-6">
+            <p className="font-sans py-24 md:font-italic">
               Beautiful Memories are like Old friends. Create one for your Child!They may not always be on
               your mind, but they are forever in your local storage!
             </p>

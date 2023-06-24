@@ -27,30 +27,26 @@ function Profile({ children, user, child, setChild, setChild1 }) {
     navigate("/childpage");
   }
   return (
-    <div>
-      <h1>
-        <p className="font-sans text-bold text-blue">{`Welcome ${user && user.name}`}</p>
-      </h1>
-      <div>
+    <>
+   
+      <div className=" App min-h-screen flex flex-col justify-normal items-center gap-7">
+      <h2 className="font-sans text-bold">{`Welcome ${user && user.name}`}</h2>
         {child &&
           child.map((i) => (
-            <div className="card h-72 w-96 bg-base-100 shadow-xl">
+            <div className="avatar">
+            <div className="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-info">
               <figure className="px-10 pt-10"   onClick={() => childSelect(i)}>
-                <img src={i.photo} alt="photo" className="rounded-xl" />
+                <img src={i.photo} alt="photo" />
+                <p className="text-white">{i.name}</p>
               </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title">{i.name}</h2>
-                <div className="card-actions">
-                </div>
               </div>
             </div>
           ))}
-      </div>
-
-      <button className="btn btn-primary" type="submit">
-        + Add Profile
+                <button className="btn btn-primary " type="submit">
+        + Add New Profile
       </button>
-    </div>
+      </div>
+      </>
   );
 }
 

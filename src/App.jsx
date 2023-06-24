@@ -11,7 +11,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Childpage from "./components/Childpage";
 import ScoreCard from "./components/ScoreCard";
-import image from './assets/CoverPhoto.jpeg'
+
 
 
 function App() {
@@ -52,8 +52,9 @@ function App() {
 
   return (
     <>
+    <div className="container">
     <div className="App min-h-screen">
-      <Nav /> 
+      <Nav/> 
       <Routes>
         <Route path="/" element={<Home users={users} setUsers={setUsers} setUser={setUser} /> } />
         <Route path="/profile" element={<Profile user={user} children={children} child={child} setChild={setChild} setChild1={setChild1}/>} />
@@ -64,6 +65,7 @@ function App() {
         <Route path="/scorecard" element={<ScoreCard scoreCard={scoreCard} setScoreCard={setScoreCard} child1={child1} setChild1={setChild1} score={score} setScore={setScore}/>}/>
       </Routes>
       <Footer />
+    </div>
     </div>
     </>
   );

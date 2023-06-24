@@ -4,3 +4,10 @@
 } */
 
 
+.container{
+    background-image: url('../public/Memories.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

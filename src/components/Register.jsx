@@ -36,7 +36,7 @@ function Register({}) {
     e.target.password.value = "";
     e.target.confirmpassword.value = "";
     if (password == confirmpassword) {
-      alert("Thank you for Registering!")
+      alert("You are all set to create Memories!")
       navigate("/");
     }
   };
