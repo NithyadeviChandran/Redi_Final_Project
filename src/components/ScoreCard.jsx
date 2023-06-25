@@ -1,8 +1,12 @@
 import React from 'react'
 import {useEffect} from 'react'
-import {  BarChart, Bar, XAxis, YAxis} from "recharts";
+import {  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from "recharts";
 
-function ScoreCard({scoreCard,child1,score,setScore}) {
+import datajson from '../data.json'
+
+function ScoreCard({ scoreCard,child1,score,setScore}) {
+
+ 
     let result = "";
     if (child1) {
       result = scoreCard && scoreCard.filter((i) => i.childId == child1.id);
@@ -15,25 +19,19 @@ function ScoreCard({scoreCard,child1,score,setScore}) {
       }
     }, []);
   
-    // const data = [
-    //     { subjects: 'English', marks: 80 },
-    //     { subjects: 'German', marks: 70 },
-    //     { subjects: 'Science', marks: 90 },
-    //     { subjects: 'Math', marks: 100 }
-    // ];
   return (
     <>
+    <div className="App min-h-screen flex flex-col justify-normal items-center gap-10">
       <h1>Scorecard</h1>
-            {score && score.subject.map((i)=> 
-            <div>
-            <p>{`subject: ${i.name}`}</p>
-            <p>{`marks: ${i.value}`}</p>
-            </div>)}   
-      <BarChart width={350} height={300} data={score}>
-            <Bar dataKey="" fill="green" />
-            <XAxis dataKey="" />
+    <BarChart width={350} height={300} data={score.subject}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <Tooltip />
+              <Legend />
+            <Bar dataKey="value" fill="cornflowerblue" />
+            <XAxis dataKey="name" />
             <YAxis />
-    </BarChart>    
+    </BarChart>
+    </div>
 </>
   )
 }

@@ -11,3 +11,23 @@
     background-repeat: no-repeat;
 }
 
+
+.chart{
+    width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+.chart-container .chartjs-render-monitor .chartjs-bar {
+    /* Styles for bars */
+    background-color: #ff6384;
+  }
+  
+  .chart-container .chartjs-render-monitor .chartjs-bar-label {
+    /* Styles for labels */
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+  }

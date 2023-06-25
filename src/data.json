@@ -25,14 +25,14 @@
         "name": "Inara",
         "age": "12",
         "parentId": 1,
-        "photo":"https://ik.imagekit.io/zhpwq1uen/Final_Project/Girl_12.webp?updatedAt=1687596468990"
+        "photo":"https://ik.imagekit.io/zhpwq1uen/Final_Project/alps_in.jpeg?updatedAt=1687633656955"
       },
       {
         "id": 2,
         "name": "Idhant",
         "age": "9",
         "parentId": 1,
-        "photo": "https://ik.imagekit.io/zhpwq1uen/ben-white-qDY9ahp0Mto-unsplash.jpg?updatedAt=1686826083080"
+        "photo": "https://ik.imagekit.io/zhpwq1uen/Final_Project/Idhu.jpeg?updatedAt=1687639038365"
       },
        {
         "id": 3,
@@ -117,7 +117,8 @@
       {
         "id": 1,
         "childId": 1,
-        "photos": ["https://ik.imagekit.io/zhpwq1uen/jeremy-mcknight-11GZVrMzfUU-unsplash.jpg?updatedAt=1686826085269"]
+        "photos": ["https://ik.imagekit.io/zhpwq1uen/Final_Project/swim_in.jpeg?updatedAt=1687633656462","https://ik.imagekit.io/zhpwq1uen/Final_Project/skate_in.jpeg?updatedAt=1687633656110","https://ik.imagekit.io/zhpwq1uen/Final_Project/dance_in.jpeg?updatedAt=1687633656496","https://ik.imagekit.io/zhpwq1uen/Final_Project/Inu-medal.jpeg?updatedAt=1687633656847"]
+        
       }, {
         "id": 2,
         "childId": 2,
@@ -139,6 +140,7 @@
         "photos": ["https://ik.imagekit.io/zhpwq1uen/vika-strawberrika-tO_4xkzT3vA-unsplash.jpg?updatedAt=1686826058479"]
       }
     ],
+  
     "scoreCard": [
       {
         "id": 1,
@@ -155,7 +157,7 @@
         "subject": [
         { "id": 1, "name": "English", "value": "94", "month": "4" },
         { "id": 2, "name": "German", "value": "54", "month": "4" },
-           { "id": 3, "name": "History", "value": "84", "month": "4" },
+        { "id": 3, "name": "History", "value": "84", "month": "4" },
        { "id": 4, "name": "Chemistry", "value": "94", "month": "4" },
        { "id": 5, "name": "Biology", "value": "84", "month": "4" }],
         "childId": 2
@@ -190,3 +192,4 @@
       }
     ]
   }
+

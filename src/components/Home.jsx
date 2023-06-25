@@ -27,7 +27,7 @@ function Home({ users, setUser }) {
       <div className="hero min-h-screen bg-info">
         <div className="hero-content text-center">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
+            <h1 className="text-5xl font-bold">Year Book 2023</h1>
             <p className="font-sans py-24 md:font-italic">
               Beautiful Memories are like Old friends. Create one for your Child!They may not always be on
               your mind, but they are forever in your local storage!
@@ -42,18 +42,18 @@ function Home({ users, setUser }) {
               <form
                 onSubmit={submitHandler}
                 method="dialog"
-                className="modal-box"
+                className="modal-box flex flex-col gap-3"
               >
                 <h3 className="font-bold text-lg">Login</h3>
                 <input
-                  className="input input-bordered w-full max-w-xs"
+                  className="input input-bordered w-full max-w-xs border-2 border-info"
                   type="email"
                   name="email"
                   id=""
                   placeholder="Enter your email"
                 />
                 <input
-                  className="input input-bordered w-full max-w-xs"
+                  className="input input-bordered w-full max-w-xs border-2 border-info"
                   type="password"
                   name="password"
                   id=""
@@ -63,7 +63,7 @@ function Home({ users, setUser }) {
                   Login
                 </button>
                 <Link to="/register">
-                  <button className="btn btn-primary" type="submit">
+                  <button className="btn btn-primary w-full max-w-xs" type="submit">
                     Register
                   </button>
                 </Link>

@@ -13,9 +13,10 @@ function Childpage({ child, child1 }) {
   }
 
   return (
-    <div className="App min-h-screen flex flex-col justify-normal items-center gap-3">
+    <div className="min-h-screen flex flex-col justify-normal items-center gap-3">
+      <h2 className="w-22 mt-10 font-semibold"><ion-icon className="text-blue" name="heart"></ion-icon>{child1.name}<ion-icon className="text-blue" name="heart"></ion-icon></h2>
       <div className="avatar">
-        <div className="w-52 border-solid border-8 border-info rounded-xl my-16">
+        <div className="w-52 border-solid border-4 border-info rounded-xl my-16">
           <img src={child1.photo} alt="photo" />
         </div>
       </div>

@@ -29,15 +29,15 @@ function Profile({ children, user, child, setChild, setChild1 }) {
   return (
     <>
    
-      <div className=" App min-h-screen flex flex-col justify-normal items-center gap-7">
+      <div className="min-h-screen flex flex-col justify-normal items-center gap-10">
       <h2 className="font-sans text-bold">{`Welcome ${user && user.name}`}</h2>
         {child &&
           child.map((i) => (
-            <div className="avatar">
-            <div className="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-info">
-              <figure className="px-10 pt-10"   onClick={() => childSelect(i)}>
-                <img src={i.photo} alt="photo" />
-                <p className="text-white">{i.name}</p>
+            <div className="avatar"    onClick={() => childSelect(i)}>
+               <p className="text-black">{i.name}</p>
+            <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-info">
+              <figure className="px-10 pt-10">
+                <img className="w-40" src={i.photo} alt="photo" />
               </figure>
               </div>
             </div>

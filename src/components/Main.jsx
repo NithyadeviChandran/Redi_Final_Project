@@ -43,54 +43,48 @@ function Main({ Calendar, child1, event, setEvent }) {
   }
   return (
     <>
-      <h2 className="card-title">{`Welcome ${child1 && child1.name}`}</h2>
+    <div className="App min-h-screen flex flex-col justify-normal items-center gap-4">
+      <h2 className="card-title">{` ${child1 && child1.name}'s Calendar`}</h2>
 
       {event &&
         event.map((i) => (
-          <div className="card w-72 bg-primary shadow-xl">
+          <div className="card w-72 bg-primary shadow-xl mx-8">
             <div className="card-body items-center text-center">
               <h2 className="card-title">Booked Appointments</h2>
-              <p>{`Date:${i.date}.${i.month}.${i.year}`}</p>
+              <p >{`Date:${i.date}.${i.month}.${i.year}`}</p>
               <p>{`Title:${i.name}`}</p>
-              <p>{`Appt details:${i.description}`}</p>
+              <p>{`Description:${i.description}`}</p>
             </div>
           </div>
         ))}
           <h2 className="card-title">Book New Appointments</h2>
-          <form method="dialog" onSubmit={submitHandler}>
+          <form className="mx-8" method="dialog" onSubmit={submitHandler}>
          <input
-            className="input input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered input-primary w-full max-w-xs border-2 border-info"
             type="date"
             name="calendar"
             id="calendar"
             onChange={changeHandler}
           />
             <input
-              className="input input-bordered input-primary w-full max-w-xs"
+              className="input input-bordered input-primary w-full max-w-xs border-2 border-info"
               type="text"
               name="text"
               placeholder="Enter your Appointment here"
             />
             <input
-              className="input input-bordered input-primary  w-full max-w-xs"
+              className="input input-bordered input-primary  w-full max-w-xs border-2 border-info"
               type="text"
               name="desc"
               id="desc"
               placeholder="Enter the description"
             />
-            <button className="btn btn-primary" type="submit">
+            <button className="btn btn-primary mx-18" type="submit">
               Submit
             </button>
           </form>
-        <div>
-          <Link to="/">
-            <button className="btn btn-primary" type="submit">
-              Back to Home
-            </button>
-          </Link>
-        </div>
         <div className="calendar min-h-fit  ">
-          <ul className="menu bg-secondary w-72 rounded-box w-80">
+          <ul className="menu bg-info rounded-box w-52 ">
             <li className="card-title"> New Appointments</li>
             {data.map((data, index) => (
               <li key={index}>{data}</li>
@@ -103,6 +97,7 @@ function Main({ Calendar, child1, event, setEvent }) {
       <Link to={"/gallery"}>
         <button className="btn btn-primary">Go to Gallery</button>
       </Link>
+      </div>
     </>
   );
 }
