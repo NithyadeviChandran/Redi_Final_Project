@@ -3,24 +3,23 @@ import { useNavigate, Link } from "react-router-dom";
 
 function Profile({ children, user, child, setChild, setChild1 }) {
   const navigate = useNavigate();
-  let kidslist = "";
-  if (user) {
-    kidslist = children && children.filter((i) => i.parentId == user.id);
-    console.log(kidslist);
-  }
+  let kidslist;
+  // const kidslist = children && children.filter((i) => i.parentId == user.id)
+  // setChild(kidslist)
   useEffect(() => {
-    if (kidslist) {
+    if (user) {
+      kidslist = children && children.filter((i) => i.parentId == user.id);
       setChild(kidslist);
     }
-    if (child) {
-      navigate("/childpage");
-    }
-  }, []);
-  useEffect(() => {
-    if (!user) {
+    else {
       navigate("/");
     }
+   
   }, []);
+  // useEffect(() =>{
+
+
+  // },[])
 
   function childSelect(e) {
     setChild1(e);
@@ -28,25 +27,34 @@ function Profile({ children, user, child, setChild, setChild1 }) {
   }
   return (
     <>
-   
-      <div className="min-h-screen flex flex-col justify-normal items-center gap-10">
-      <h2 className="font-sans text-bold">{`Welcome ${user && user.name}`}</h2>
+      <div className="min-h-screen flex flex-col justify-normal items-center gap-10 md:flex justify-center items-center gap-10">
+        <h2 className="font-sans text-bold md:text-5xl mt-4 font-mono">
+          <span style={{ color: "blue" }}>{`W`}</span>
+          {`elcome ${user && user.name}`}
+        </h2>
         {child &&
           child.map((i) => (
-            <div className="avatar"    onClick={() => childSelect(i)}>
-               <p className="text-black">{i.name}</p>
-            <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-info">
-              <figure className="px-10 pt-10">
-                <img className="w-40" src={i.photo} alt="photo" />
-              </figure>
+            <div className="avatar" onClick={() => childSelect(i)}>
+              <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-info">
+                <figure className="px-10 pt-10 md:text-3xl">
+                  {" "}
+                  {i.name}
+                  <img className="image" src={i.photo} alt="photo" />
+                </figure>
               </div>
+              {/* <p className="text-black md:text-3xl font-mono">{i.name}</p> */}
             </div>
           ))}
-                <button className="btn btn-primary " type="submit">
-        + Add New Profile
-      </button>
+          <Link to ="/NewProfile">
+        <button
+          className="btn btn-primary md:mx-40 mt-24 text-xl"
+          type="submit"
+        >
+          + New Profile
+        </button>
+        </Link>
       </div>
-      </>
+    </>
   );
 }
 

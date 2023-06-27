@@ -43,33 +43,31 @@ function Register({}) {
 
   return (
     <div className="min-h-screen">
-      <form className="form-control" onSubmit={submitHandler}>
-        <input
+      <form className="form-control flex flex-col gap-2" onSubmit={submitHandler}>
+        <input className="input input-bordered input-primary  w-48 max-w-xs border-2 border-info mt-10 md: w-52 mx-40"
           type="text"
           name="nam"
           placeholder="enter your name"
-          className="input input-bordered"
         />
-        <input
+        <input className="input input-bordered input-primary  w-48 max-w-xs border-2 border-info md: w-52 mx-40"
           type="email"
           name="email"
           placeholder="email"
-          className="input input-bordered"
+      
         />
-        <input
+        <input className="input input-bordered input-primary  w-48 max-w-xs border-2 border-info md: w-52 mx-40"
           type="password"
           name="password"
           placeholder="password"
-          className="input input-bordered"
+         
         />
-        <input
+        <input className="input input-bordered input-primary  w-48 max-w-xs border-2 border-info md: w-52 mx-40"
           type="password"
           name="confirmpassword"
           placeholder="confirm password"
-          className="input input-bordered"
         />
         <div className="form-control mt-6">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary w-32 md: w-52 mx-40">
             Register
           </button>
         </div>

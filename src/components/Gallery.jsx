@@ -4,17 +4,18 @@ import axios from "axios";
 
 function Gallery({ child1, gallery, photos, setPhotos }) {
   const [image, setImage] = useState([]);
-  let result = "";
-  if (child1) {
-    console.log(child1);
-    result = gallery && gallery.filter((i) => i.childId == child1.id);
-    console.log(result);
-  }
+  // let result = "";
+  // if (child1) {
+  //   console.log(child1);
+  //   result = gallery && gallery.filter((i) => i.childId == child1.id);
+  //   console.log(result);
+  // }
 
   useEffect(() => {
-    if (result) {
+    // if (result) {
+      const result = gallery && gallery.filter((i) => i.childId == child1.id);
       setPhotos(result);
-    }
+    // }
   }, []);
 
   const changeHandler = (e) => {
@@ -35,7 +36,7 @@ function Gallery({ child1, gallery, photos, setPhotos }) {
   return (
     <>
     <div className="App min-h-screen flex flex-col justify-normal items-center gap-5">
-    <h2 className="font-sans text-bold"> Cherishing Memories!</h2>
+    <h2 className="font-mono text-xl mt-10"> Cherishing Memories!</h2>
       {/* {photos &&
         photos.map((i) => (
           <div className="card w-72 bg-base-100 shadow-xl">
@@ -89,7 +90,10 @@ function Gallery({ child1, gallery, photos, setPhotos }) {
           className="file-input file-input-bordered file-input-primary w-full max-w-xs"
           onChange={changeHandler}
         />
-    <Link to={"/childpage"}>
+      <Link to={"/scorecard"}>
+        <button className="btn btn-primary">Go to Scorecard</button>
+      </Link>
+    <Link to={"/profile"}>
         <button className="btn btn-primary">Go to Profile</button>
       </Link>
         {/* <button className="btn btn-primary" onClick={clickHandler}>
