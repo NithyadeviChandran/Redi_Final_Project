@@ -15,7 +15,7 @@ function Childpage({ child, child1 }) {
   },[])
 
   return (
-    <div className="min-h-screen flex flex-col justify-normal items-center gap-3">
+    <div className="min-h-screen flex flex-col justify-normal items-center gap-3 w-screen">
       <h2 className="w-22 mt-10 font-semibold md:text-3xl font-mono"><ion-icon style={{color:'blue', fontSize:'1.2em'}}  className="text-blue" name="heart"></ion-icon>{child1.name}<ion-icon style={{color:'blue', fontSize:'1.2em'}} className="text-blue" name="heart"></ion-icon></h2>
       <div className="avatar">
         <div className="w-52 border-solid border-4 border-info rounded-xl my-16">

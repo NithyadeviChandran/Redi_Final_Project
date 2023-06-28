@@ -41,21 +41,21 @@ function Main({ Calendar, child1, event, setEvent, update }) {
       .post("https://nithya-render.onrender.com/calendar", {
         childId: child1.id,
         name: e.target.title.value,
+        // date:`${e.target.calendar.value.slice(8)}.${e.target.calendar.value.slice(5, 7)}.${e.target.calendar.value.slice(0, 4)}`,
         Date: e.target.calendar.value.slice(8),
         Month: e.target.calendar.value.slice(5, 7),
         Year: e.target.calendar.value.slice(0, 4),
-        description: e.target.desc.value,
+        description: e.target.desc.value
       })
       .then((i) => console.log(i));
     e.target.title.value = "";
     e.target.desc.value = "";
     e.target.calendar.value = "";
-
     update();
   }
   return (
     <>
-      <div className="App min-h-screen flex flex-col justify-normal items-center gap-4">
+      <div className="App min-h-screen flex flex-col justify-normal items-center gap-4 w-screen">
         <h2 className="card-title md:text-2xl font-mono">
           {` ${child1 && child1.name}'s Calendar`}
         </h2>

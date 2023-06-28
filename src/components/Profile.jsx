@@ -27,7 +27,7 @@ function Profile({ children, user, child, setChild, setChild1 }) {
   }
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-normal items-center gap-10 md:flex justify-center items-center gap-10">
+      <div className="min-h-screen  w-screen flex flex-col justify-normal items-center gap-10 md:flex justify-center items-center gap-10 w-screen">
         <h2 className="font-sans text-bold md:text-5xl mt-4 font-mono">
           <span style={{ color: "blue" }}>{`W`}</span>
           {`elcome ${user && user.name}`}

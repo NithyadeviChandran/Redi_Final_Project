@@ -23,7 +23,7 @@ function Home({ users, setUser }) {
   };
   return (
     <>
-      <div className="hero min-h-screen bg-info">
+      <div className="hero min-h-screen bg-info w-screen">
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl font-mono md:text-5xl">
@@ -72,7 +72,7 @@ function Home({ users, setUser }) {
                   </button>
                   <Link to="/register">
                     <button
-                      className="btn btn-primary w-full max-w-xs md:btn-primary btn-sm w-28 mx-28"
+                      className="btn btn-primary w-full max-w-xs md:btn-primary btn-sm w-20 mx-28"
                       type="submit"
                     >
                       Register

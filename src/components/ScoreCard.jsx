@@ -37,10 +37,12 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
 
   return (
     <>
-      <div className=" min-h-screen w-full flex flex-col justify-normal items-center gap-4 font-mono">
-        <h1 className="text-center mt-10">Scorecard</h1>
+      <div className=" min-h-screen w-screen flex flex-col justify-normal items-center gap-4 font-mono">
+      <h2 className="card-title md:text-2xl font-mono mt-10">
+          {` ${child1 && child1.name}'s Scorecard`}
+    </h2>
         {score && (
-          <BarChart width={370} height={300} data={score.subject}>
+          <BarChart width={550} height={300} data={score.subject}>
             <Tooltip />
             <Legend />
             <Bar dataKey="Marks" fill="blue" />

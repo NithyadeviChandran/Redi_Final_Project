@@ -36,7 +36,9 @@ function Gallery({ child1, gallery, photos, setPhotos }) {
   return (
     <>
     <div className="App min-h-screen flex flex-col justify-normal items-center gap-5">
-    <h2 className="font-mono text-xl mt-10"> Cherishing Memories!</h2>
+    <h2 className="card-title md:text-2xl font-mono mt-10">
+          {` ${child1 && child1.name}'s Cherishing Memories!`}
+    </h2>
       {/* {photos &&
         photos.map((i) => (
           <div className="card w-72 bg-base-100 shadow-xl">

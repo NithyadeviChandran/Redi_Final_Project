@@ -12,6 +12,7 @@ import axios from "axios";
 import Childpage from "./components/Childpage";
 import ScoreCard from "./components/ScoreCard";
 import NewProfile from "./components/NewProfile";
+import Map from './components/Maps/Map'
 
 
 
@@ -35,8 +36,6 @@ function App() {
     .catch(i=> console.log(i))
   }
   
- 
-  
   useEffect(()=>{
       // api calls goes here
     axios("https://nithya-render.onrender.com/users")
@@ -56,12 +55,21 @@ function App() {
     .catch(i=> console.log(i))
   },[])
 
+  useEffect(()=>{
+    axios("https://nithya-render.onrender.com/Calendar")
+    .then(i=>setCalendar(i.data))
+    .catch(i=> console.log(i))
+  },[update])
+
+
+
   return (
     <>
-    <div className="container">
-    <div className="App min-h-screen">
+  <div className="App min-h-screen w-screen container">
       <Nav/> 
+      
       <Routes>
+        {/* <Route path="/Map" element={<Map/>} /> */}
         <Route path="/" element={<Home users={users} setUsers={setUsers} setUser={setUser} /> } />
         <Route path="/profile" element={<Profile user={user} children={children} child={child} setChild={setChild} setChild1={setChild1}/>} />
         <Route path="/NewProfile" element={<NewProfile/>}/>
@@ -72,7 +80,6 @@ function App() {
         <Route path="/scorecard" element={<ScoreCard scoreCard={scoreCard} setScoreCard={setScoreCard} child1={child1} setChild1={setChild1} score={score} setScore={setScore}/>}/>
       </Routes>
       <Footer />
-    </div>
     </div>
     </>
   );

@@ -3,7 +3,7 @@ import Logout from "./Logout";
 
 function Nav() {
   return (
-    <div className="navbar bg-neutral text-neutral-content  h-32">
+    <div className="navbar bg-neutral text-neutral-content  h-32 w-screen">
       <div className="navbar-start">
         <a className="btn btn-neutral normal-case text-xl md:text-2xl font-mono">
           MemoryLane
@@ -13,7 +13,7 @@ function Nav() {
           ></ion-icon>
         </a>
       </div >
-    <div className="navbar-end">
+    <div className="navbar-end mx-10">
       <Logout/>
   
     </div>
