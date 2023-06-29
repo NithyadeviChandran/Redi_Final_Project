@@ -48,7 +48,6 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
             <Tooltip />
             <Legend />
             <Bar dataKey="Marks" fill="blue" />
-
             <XAxis dataKey="name" />
             <YAxis />
           </BarChart>

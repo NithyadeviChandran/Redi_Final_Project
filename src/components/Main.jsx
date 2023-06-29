@@ -9,6 +9,7 @@ function Main({ Calendar, child1, event, setEvent, update }) {
   // const [name, setName] = useState([]);
   // const [desc, setDesc] = useState([]);
   const [data, setData] = useState([]);
+  const [count, setCount] = useState(0)
 
   // let result = "";
   // if (child1) {
@@ -18,12 +19,17 @@ function Main({ Calendar, child1, event, setEvent, update }) {
   // }
 
   useEffect(() => {
-    const result = Calendar && Calendar.filter((i) => i.childId == child1.id);
-    setEvent(result);
-  }, []);
+    // console.log("runing");
+    setTimeout(() => {
+      axios(`https://nithya-render.onrender.com/calendar/?childId=${child1.id}`).then(i => setEvent(i.data)).catch(i => console.log(i))
+
+    },2000)
+    
+  }, [count]);
 
   function updateEvent () {
-    axios("https://nithya-render.onrender.com/calendar").then(i => setEvent(i.data)).catch(i => console.log(i))
+    // axios(`https://nithya-render.onrender.com/calendar/?childId=${child1.id}`).then(i => setEvent(i.data)).catch(i => console.log(i))
+    
   }
 
   // function changeHandler(e) {
@@ -52,11 +58,12 @@ function Main({ Calendar, child1, event, setEvent, update }) {
         description: e.target.desc.value
       })
       .then((i) => console.log(i));
+      setCount(i => i + 1)
     e.target.title.value = "";
     e.target.desc.value = "";
     e.target.calendar.value = "";
     update();
-    updateEvent()
+    // updateEvent()
   }
   return (
     <>
@@ -64,7 +71,7 @@ function Main({ Calendar, child1, event, setEvent, update }) {
         <h2 className="card-title md:text-2xl font-mono">
           {` ${child1 && child1.name}'s Calendar`}
         </h2>
-        <div className="md:flex gap-2">
+        <div className="md:flex flex-wrap gap-2">
         {event &&
           event.map((i) => (
             <div className="card md:w-72 bg-primary shadow-xl mx-8">

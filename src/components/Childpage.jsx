@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Childpage({ child, child1 }) {
+function Childpage({ child1 }) {
   const navigate = useNavigate();
   // let result = "";
   // if (child) {

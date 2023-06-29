@@ -4,8 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 function Profile({ children, user, child, setChild, setChild1 }) {
   const navigate = useNavigate();
   let kidslist;
-  // const kidslist = children && children.filter((i) => i.parentId == user.id)
-  // setChild(kidslist)
   useEffect(() => {
     if (user) {
       kidslist = children && children.filter((i) => i.parentId == user.id);
@@ -14,12 +12,7 @@ function Profile({ children, user, child, setChild, setChild1 }) {
     else {
       navigate("/");
     }
-   
   }, []);
-  // useEffect(() =>{
-
-
-  // },[])
 
   function childSelect(e) {
     setChild1(e);
@@ -42,7 +35,6 @@ function Profile({ children, user, child, setChild, setChild1 }) {
                   <img className="image" src={i.photo} alt="photo" />
                 </figure>
               </div>
-              {/* <p className="text-black md:text-3xl font-mono">{i.name}</p> */}
             </div>
           ))}
           <Link to ="/NewProfile">
