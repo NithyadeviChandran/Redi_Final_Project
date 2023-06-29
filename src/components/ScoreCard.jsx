@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import "../App.css";
 import { Link } from "react-router-dom";
 import {
   BarChart,
@@ -41,6 +42,7 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
       <h2 className="card-title md:text-2xl font-mono mt-10">
           {` ${child1 && child1.name}'s Scorecard`}
     </h2>
+    <div>
         {score && (
           <BarChart width={550} height={300} data={score.subject}>
             <Tooltip />
@@ -51,7 +53,7 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
             <YAxis />
           </BarChart>
         )}
-      
+      </div>
         <div className="md:flex gap-1 mt-10">
         <form onSubmit={submitHandler}>
           <div className="flex flex-col gap-1">
@@ -95,7 +97,7 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
           </div>
           </form>
        
-        <div>
+        <div className="bar-chart-container">
           <BarChart width={350} height={300} data={data}>
             <XAxis dataKey="subject" />
             <YAxis />
@@ -107,12 +109,15 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
         </div>
         </div>
        
-        <div className="flex flex-col justify-normal items-center gap-7">
+        <div className="md:flex justify-normal items-center gap-40">
           <Link to={"/profile"}>
-            <button className="btn btn-primary mt-10">Go to Profile</button>
+            <button className="btn btn-primary mt-10 mb-4">Go to Profile</button>
           </Link>
           <Link to={"/gallery"}>
-            <button className="btn btn-primary">Go to Gallery</button>
+            <button className="btn btn-primary mt-10 mb-4">Go to Gallery</button>
+          </Link>
+          <Link to={"/calendar"}>
+            <button className="btn btn-primary mt-10 mb-4">Go to Calendar</button>
           </Link>
         </div>
       </div>

@@ -92,12 +92,17 @@ function Gallery({ child1, gallery, photos, setPhotos }) {
           className="file-input file-input-bordered file-input-primary w-full max-w-xs"
           onChange={changeHandler}
         />
+        <div className="md:flex justify-normal items-center mt-10 gap-40">
       <Link to={"/scorecard"}>
         <button className="btn btn-primary">Go to Scorecard</button>
       </Link>
     <Link to={"/profile"}>
         <button className="btn btn-primary">Go to Profile</button>
       </Link>
+      <Link to={"/calendar"}>
+            <button className="btn btn-primary">Go to Calendar</button>
+          </Link>
+          </div>
         {/* <button className="btn btn-primary" onClick={clickHandler}>
             Upload Photos
           </button> */}

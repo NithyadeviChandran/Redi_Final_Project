@@ -12,7 +12,6 @@ import axios from "axios";
 import Childpage from "./components/Childpage";
 import ScoreCard from "./components/ScoreCard";
 import NewProfile from "./components/NewProfile";
-import Map from './components/Maps/Map'
 
 
 
@@ -67,9 +66,7 @@ function App() {
     <>
   <div className="App min-h-screen w-screen container">
       <Nav/> 
-      
       <Routes>
-        {/* <Route path="/Map" element={<Map/>} /> */}
         <Route path="/" element={<Home users={users} setUsers={setUsers} setUser={setUser} /> } />
         <Route path="/profile" element={<Profile user={user} children={children} child={child} setChild={setChild} setChild1={setChild1}/>} />
         <Route path="/NewProfile" element={<NewProfile/>}/>

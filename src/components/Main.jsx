@@ -22,6 +22,10 @@ function Main({ Calendar, child1, event, setEvent, update }) {
     setEvent(result);
   }, []);
 
+  function updateEvent () {
+    axios("https://nithya-render.onrender.com/calendar").then(i => setEvent(i.data)).catch(i => console.log(i))
+  }
+
   // function changeHandler(e) {
   //   e.preventDefault();
   //   setDate(e.target.value);
@@ -42,9 +46,9 @@ function Main({ Calendar, child1, event, setEvent, update }) {
         childId: child1.id,
         name: e.target.title.value,
         // date:`${e.target.calendar.value.slice(8)}.${e.target.calendar.value.slice(5, 7)}.${e.target.calendar.value.slice(0, 4)}`,
-        Date: e.target.calendar.value.slice(8),
-        Month: e.target.calendar.value.slice(5, 7),
-        Year: e.target.calendar.value.slice(0, 4),
+        date: e.target.calendar.value.slice(8),
+        month: e.target.calendar.value.slice(5, 7),
+        year: e.target.calendar.value.slice(0, 4),
         description: e.target.desc.value
       })
       .then((i) => console.log(i));
@@ -52,6 +56,7 @@ function Main({ Calendar, child1, event, setEvent, update }) {
     e.target.desc.value = "";
     e.target.calendar.value = "";
     update();
+    updateEvent()
   }
   return (
     <>
@@ -59,10 +64,10 @@ function Main({ Calendar, child1, event, setEvent, update }) {
         <h2 className="card-title md:text-2xl font-mono">
           {` ${child1 && child1.name}'s Calendar`}
         </h2>
-
+        <div className="md:flex gap-2">
         {event &&
           event.map((i) => (
-            <div className="card w-72 bg-primary shadow-xl mx-8">
+            <div className="card md:w-72 bg-primary shadow-xl mx-8">
               <div className="card-body items-center text-center">
                 <h2 className="card-title">Booked Appointments</h2>
                 <p>{`Date:${i.date}.${i.month}.${i.year}`}</p>
@@ -71,13 +76,14 @@ function Main({ Calendar, child1, event, setEvent, update }) {
               </div>
             </div>
           ))}
+          </div>
         <div className="md:flex  gap-2">
           <form
             className="mx-8 md:flex flex-col gap-2"
             method="dialog"
             onSubmit={submitHandler}
           >
-            <h2 className="card-title">Book New Appointments</h2>
+            <h2 className="card-title mt-10">Book New Appointments</h2>
             <input
               className="input input-bordered input-primary w-full max-w-xs border-2 border-info"
               type="date"
@@ -102,7 +108,7 @@ function Main({ Calendar, child1, event, setEvent, update }) {
               Submit
             </button>
           </form>
-          <div className="calendar min-h-fit  ">
+          <div className="calendar min-h-fit mt-10 ">
             <ul className="menu bg-info rounded-box card w-72 shadow-xl mx-8 mt-8">
               <li className="card-title "> New Appointments</li>
               {data.map((data, index) => (
