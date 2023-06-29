@@ -12,6 +12,7 @@ import axios from "axios";
 import Childpage from "./components/Childpage";
 import ScoreCard from "./components/ScoreCard";
 import NewProfile from "./components/NewProfile";
+import GMaps from "./components/GMaps";
 
 
 
@@ -75,6 +76,7 @@ function App() {
         <Route path="/calendar" element={<Main update={update} Calendar={Calendar} event={event} setEvent={setEvent}child1={child1} setChild1={setChild1} />} />
         <Route path="/gallery" element={<Gallery photos={photos} setPhotos={setPhotos} gallery={gallery} child1={child1} setChild1={setChild1} />} />
         <Route path="/scorecard" element={<ScoreCard scoreCard={scoreCard} setScoreCard={setScoreCard} child1={child1} setChild1={setChild1} score={score} setScore={setScore}/>}/>
+        <Route path="/places" element={<GMaps/>}/>
       </Routes>
       <Footer />
     </div>

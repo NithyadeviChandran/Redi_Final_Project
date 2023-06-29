@@ -6,4 +6,14 @@ body{
     background-repeat: no-repeat;
 }
 
+.Map {
+    height: 300px;
+    width: 700px;
+  }
+  
+  .map-container {
+    height: 300px;
+    width: 700px;
+  }
+  
 

@@ -31,6 +31,9 @@ function Childpage({ child1 }) {
       <Link to={"/scorecard"}>
         <button className="btn btn-primary md:mx-40 mt-10 text-xl font-mono w-44">Scorecard</button>
       </Link>
+      <Link to={"/places"}>
+        <button className="btn btn-primary md:mx-40 mt-10 text-xl font-mono w-44">PlacesVisited</button>
+      </Link>
     </div>
   );
 }

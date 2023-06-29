@@ -118,6 +118,9 @@ function ScoreCard({ scoreCard, child1, score, setScore }) {
           <Link to={"/calendar"}>
             <button className="btn btn-primary mt-10 mb-4">Go to Calendar</button>
           </Link>
+          <Link to={"/places"}>
+            <button className="btn btn-primary">Go to PlacesVisited</button>
+          </Link>
         </div>
       </div>
     </>
