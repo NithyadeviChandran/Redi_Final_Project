@@ -72,7 +72,7 @@ function Home({ users, setUser }) {
                   </button>
                   <Link to="/register">
                     <button
-                      className="btn btn-primary w-full max-w-xs md:btn-primary btn-sm w-14 mx-28"
+                      className="btn btn-primary max-w-xs md:btn-primary btn-sm w-28 mx-28"
                       type="submit"
                     >
                       Register
